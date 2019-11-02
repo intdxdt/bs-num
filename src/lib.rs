@@ -1,5 +1,5 @@
-use std::fmt::{Debug, Display};
-pub use num_traits::{Bounded, Num, Signed, Zero, One};
+use std::fmt::{Debug};
+pub use num_traits::{Bounded, Num, Signed, Zero, One, Float, FloatConst};
 
 pub trait Numeric: Bounded + Signed + Num + Clone + Copy + PartialOrd + Debug {}
 
