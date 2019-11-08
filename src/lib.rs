@@ -1,10 +1,10 @@
-use std::fmt::{Debug};
-pub use num_traits::{Bounded, Num, Signed, Zero, One, Float, FloatConst};
+use std::fmt::Debug;
 
-pub trait Numeric: Bounded + Signed + Num + Clone + Copy + PartialOrd + Debug {}
+pub use num_traits::{Bounded, Num, NumCast, Signed, Zero, One, Float, FloatConst};
 
-impl<T> Numeric for T where T: Bounded + Num + Clone + Copy + Signed + PartialOrd + Debug {}
+pub trait Numeric: Bounded + Signed + Num + NumCast + Clone + Copy + PartialOrd + Debug {}
 
+impl<T> Numeric for T where T: Bounded + Num + NumCast + Clone + Copy + Signed + PartialOrd + Debug {}
 
 #[inline]
 pub fn max<T>(a: T, b: T) -> T
